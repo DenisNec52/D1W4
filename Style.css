@@ -1,0 +1,16 @@
+.general {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+      
+}
+button{
+    height: 10px;
+    width: auto;
+    background-color: aquamarine;
+}
+footer{
+display: flex;
+position: relative;
+justify-content: center;
+}

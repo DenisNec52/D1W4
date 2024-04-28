@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
     <head>
         <meta charset="utf-8">
@@ -13,13 +9,16 @@
         <link rel="stylesheet" href="Style.css">
     </head>
     <body>
-        
-        <div class="general">
-            <input type="text", placeholder="luogo", id="location">
-            <input type="text", placeholder="lavoro", id="lavoro">
-            <input type="button", placeholder="cerca", id="button" onclick="click">
-        </div>
-        <footer><p>mi dispiace non aver potuto completare il progetto non ho ben capito come strutturare l'algoritmo per cercare i contenuti e ho un problema con il value</p></footer>
+        <h1>Risultati della Ricerca</h1>
+        <form>
+          <label for="title">Titolo:</label>
+          <input type="text" id="title" name="title"><br><br>
+          <label for="location">Località:</label>
+          <input type="text" id="location" name="location"><br><br>
+          <button type="button" onclick="ricercaOnClick()">Cerca</button>
+        </form>
+        <ul></ul>
+        <footer><p>Hello Epicode</p></footer>
         <script src="script.js" async defer></script>
     </body>
 </html>

@@ -12,7 +12,10 @@ Prendi queste tre inserzioni ad esempio:
 
 Cercando contemporaneamente come posizione lavorativa "dev" e posizione geografica "US", dovresti ottenere come risultato solamente job1 e job3,
 in quanto job2 non soddisfa la condizione posta sulla posizione geografica.
-v
+
+REQUISITI:
+- il tuo algoritmo deve tornare i risultati nella seguente forma:
+{
   result: [], <-- inserisci qui le inserzioni che rispecchiano la posizione lavorativa e la posizione geografica richiesta
   count: 0 <-- inserisci qui il numero totale delle inserzioni trovate
 }
@@ -36,187 +39,144 @@ Dopo aver raccolto ed elaborato i dati, e’ il momento di mostrare i risultati 
 
 // NON MODIFICARE QUESTO ARRAY!
 const jobs = [
-    { title: "Marketing Intern", location: "US, NY, New York" },
-    {
-        title: "Customer Service - Cloud Video Production",
-        location: "NZ, Auckland",
-    },
-    {
-        title: "Commissioning Machinery Assistant (CMA)",
-        location: "US, IA, Wever",
-    },
-    {
-        title: "Account Executive - Washington DC",
-        location: "US, DC, Washington",
-    },
-    { title: "Bill Review Manager", location: "US, FL, Fort Worth" },
-    { title: "Accounting Clerk", location: "US, MD," },
-    { title: "Head of Content (m/f)", location: "DE, BE, Berlin" },
-    {
-        title: "Lead Guest Service Specialist",
-        location: "US, CA, San Francisco",
-    },
-    { title: "HP BSM SME", location: "US, FL, Pensacola" },
-    {
-        title: "Customer Service Associate - Part Time",
-        location: "US, AZ, Phoenix",
-    },
-    {
-        title: "ASP.net Developer Job opportunity at United States,New Jersey",
-        location: "US, NJ, Jersey City",
-    },
-    {
-        title: "Talent Sourcer (6 months fixed-term contract)",
-        location: "GB, LND, London",
-    },
-    {
-        title: "Applications Developer, Digital",
-        location: "US, CT, Stamford",
-    },
-    { title: "Installers", location: "US, FL, Orlando" },
-    { title: "Account Executive - Sydney", location: "AU, NSW, Sydney" },
-    {
-        title: "VP of Sales - Vault Dragon",
-        location: "SG, 01, Singapore",
-    },
-    { title: "Hands-On QA Leader", location: "IL, Tel Aviv, Israel" },
-    {
-        title: "Southend-on-Sea Traineeships Under NAS 16-18 Year Olds Only",
-        location: "GB, SOS, Southend-on-Sea",
-    },
-    { title: "Visual Designer", location: "US, NY, New York" },
-    {
-        title: "Process Controls Engineer - DCS PLC MS Office - PA",
-        location: "US, PA, USA Northeast",
-    },
-    { title: "Marketing Assistant", location: "US, TX, Austin" },
-    { title: "Front End Developer", location: "NZ, N, Auckland" },
-    { title: "Engagement Manager", location: "AE," },
-    {
-        title: "Vice President, Sales and Sponsorship (Businessfriend.com)",
-        location: "US, CA, Carlsbad",
-    },
-    { title: "Customer Service", location: "GB, LND, London" },
-    { title: "H1B SPONSOR FOR L1/L2/OPT", location: "US, NY, New York" },
-    { title: "Marketing Exec", location: "SG," },
-    {
-        title: "HAAD/DHA Licensed Doctors Opening in UAE",
-        location: "AE, AZ, Abudhabi",
-    },
-    {
-        title: "Talent Management Process Manager",
-        location: "US, MO, St. Louis",
-    },
-    { title: "Customer Service Associate", location: "CA, ON, Toronto" },
-    {
-        title: "Customer Service Technical Specialist",
-        location: "US, MA, Waltham",
-    },
-    { title: "Software Applications Specialist", location: "US, KS," },
-    { title: "Craftsman Associate", location: "US, WA, Everett" },
-    { title: "Completion Engineer", location: "US, CA, San Ramon" },
-    { title: "I Want To Work At Karmarama", location: "GB, LND," },
-    {
-        title: "English Teacher Abroad",
-        location: "US, NY, Saint Bonaventure",
-    },
-];
-  
-// // var botton = document.addEventListener("click");
-// var value = "";
-// function Tolow(){
-//     let inputuno = document.getElementById(location).value;
-//     for ( u=0; u<inputuno.length; u++)
-//     if (inputuno[u]=="");
-//     inputuno.toLowerCase();
-//        return u; 
-//  return -1;
-// }
-// function Tolow2(){
-//     let inputdue = document.getElementById(lavoro).value; 
-//     for ( d=0; d<inputdue.length; d++)
-//     if (inputdue[d]=="");
-//     inputdue.toLowerCase();
-//        return d; 
-//  return -1;
-// }
-// function b1(){
-//     Tolow();
-//     Tolow2();
-// }
-// jobs.title,jobs.location;
-// console.log
+  { title: "Marketing Intern", location: "US, NY, New York" },
+  {
+    title: "Customer Service - Cloud Video Production",
+    location: "NZ, Auckland",
+  },
+  {
+    title: "Commissioning Machinery Assistant (CMA)",
+    location: "US, IA, Wever",
+  },
+  {
+    title: "Account Executive - Washington DC",
+    location: "US, DC, Washington",
+  },
+  { title: "Bill Review Manager", location: "US, FL, Fort Worth" },
+  { title: "Accounting Clerk", location: "US, MD," },
+  { title: "Head of Content (m/f)", location: "DE, BE, Berlin" },
+  {
+    title: "Lead Guest Service Specialist",
+    location: "US, CA, San Francisco",
+  },
+  { title: "HP BSM SME", location: "US, FL, Pensacola" },
+  {
+    title: "Customer Service Associate - Part Time",
+    location: "US, AZ, Phoenix",
+  },
+  {
+    title: "ASP.net Developer Job opportunity at United States,New Jersey",
+    location: "US, NJ, Jersey City",
+  },
+  {
+    title: "Talent Sourcer (6 months fixed-term contract)",
+    location: "GB, LND, London",
+  },
+  {
+    title: "Applications Developer, Digital",
+    location: "US, CT, Stamford",
+  },
+  { title: "Installers", location: "US, FL, Orlando" },
+  { title: "Account Executive - Sydney", location: "AU, NSW, Sydney" },
+  {
+    title: "VP of Sales - Vault Dragon",
+    location: "SG, 01, Singapore",
+  },
+  { title: "Hands-On QA Leader", location: "IL, Tel Aviv, Israel" },
+  {
+    title: "Southend-on-Sea Traineeships Under NAS 16-18 Year Olds Only",
+    location: "GB, SOS, Southend-on-Sea",
+  },
+  { title: "Visual Designer", location: "US, NY, New York" },
+  {
+    title: "Process Controls Engineer - DCS PLC MS Office - PA",
+    location: "US, PA, USA Northeast",
+  },
+  { title: "Marketing Assistant", location: "US, TX, Austin" },
+  { title: "Front End Developer", location: "NZ, N, Auckland" },
+  { title: "Engagement Manager", location: "AE," },
+  {
+    title: "Vice President, Sales and Sponsorship (Businessfriend.com)",
+    location: "US, CA, Carlsbad",
+  },
+  { title: "Customer Service", location: "GB, LND, London" },
+  { title: "H1B SPONSOR FOR L1/L2/OPT", location: "US, NY, New York" },
+  { title: "Marketing Exec", location: "SG," },
+  {
+    title: "HAAD/DHA Licensed Doctors Opening in UAE",
+    location: "AE, AZ, Abudhabi",
+  },
+  {
+    title: "Talent Management Process Manager",
+    location: "US, MO, St. Louis",
+  },
+  { title: "Customer Service Associate", location: "CA, ON, Toronto" },
+  {
+    title: "Customer Service Technical Specialist",
+    location: "US, MA, Waltham",
+  },
+  { title: "Software Applications Specialist", location: "US, KS," },
+  { title: "Craftsman Associate", location: "US, WA, Everett" },
+  { title: "Completion Engineer", location: "US, CA, San Ramon" },
+  { title: "I Want To Work At Karmarama", location: "GB, LND," },
+  {
+    title: "English Teacher Abroad",
+    location: "US, NY, Saint Bonaventure",
+  },
+]
 
-
-
-
-
-
-
-// var trovato = false;	
-// var base='';	
-// function inizia() {
-// base = opener.document.body.createTextRange();
-// }	
-// function trova() {	    
-// if (document.MioForm.jobs.location,title.value == '') {
-// alert('Nulla da cercare!');
-// return;
-// }    
-// trovato=base.findText(document.MioForm.location,title.value)	    
-// if (trovato) {	    
-// base.findText(document.MioForm.location,title.value);	    
-// base.select();	    
-// base.scrollIntoView();	    
-// jobs++;	    
-// base.moveStart("character", 1);
-// base.moveEnd("textedit");	    
-// }	    
-// else {	    
-// if (jobs == '') alert('"' + document.MioForm.location,title.value +'" non è stato trovato in questa pagina.');	    
-// else
-// alert('"' + document.MioForm.location,title.value+'" è stato trovato '+ jobs+' jobs in questa pagina.');	    
-// jobs=0;	    
-// }
-// }
-     
-var value = "";
-//FUNZIONE PRINCIPALE
-function doSearch() {
-    
-    let location = document.getElementById("luogo").value.toLowerCase();// recupero i valori degli input
-    let title = document.getElementById("lavoro").value.toLowerCase();
-    let results = findInPositions(title, location); // faccio la ricerca utilizzando la funzione con l'algoritmo
-        button.addEventListener("click", function (e) {
-            for (s=title,location; s>=title.location; s++ );
-          });
-          
-printResult(result);  //richiamo una funzione che va a fare l'output
-}   
-doSearch();
-
-
-function findInPositions(title, location) {
-    if (title === document.getElementById("lavoro").value.toLowerCase){
-        for (t=title; t>=title; t++)
-        printResult(findInPositions[0])
-        return(findInPositions);
+//PARTE 1
+const cercaLavori = (queryLocation, queryTitolo) => {
+  let risultati = {
+    results: [],
+    count: 0,
+  }
+  for (let i = 0; i < jobs.length; i++) {
+    const lavoro = jobs[i]
+    // if(lavoro.location.toLowerCase().includes(queryLocation.toLowerCase()) && lavoro.title.toLowerCase().includes(queryTitolo.toLowerCase())) {
+    //     risultati.results.push(lavoro)
+    //     risultati.count++
+    // }
+    let locationLavoroCorrente = lavoro.location.toLowerCase() //tutta in minuscolo
+    let titleLavoroCorrente = lavoro.title.toLowerCase()
+    let queryTitoloMin = queryTitolo.toLowerCase()
+    let queryLocationMin = queryLocation.toLowerCase()
+    console.log(locationLavoroCorrente, titleLavoroCorrente, queryLocationMin, queryTitoloMin);
+    if (
+      locationLavoroCorrente.includes(queryLocationMin) &&
+      titleLavoroCorrente.includes(queryTitoloMin)
+    ) {
+      risultati.results.push(lavoro)
+      risultati.count++
     }
-    if (location === document.getElementById("luogo").value.toLowerCase){
-        for (l=location; l>=location; l++)
-        printResult(findInPositions[0]);
-        return(findInPositions);
-    }
-    else{
-        printResult("Not Found Sorry")
-    };
-    printResult(findInPositions);
-    //devo scrivere l'algoritmo di ricerca che vada a vedere quali elementi dell'array originario rispettano i criteri di ricerca
-    // devo fare un ciclo di tutti gli elementi dell'array jobs e ritornare da questa funzione un nuovo array contenente solo quelli che rispettano i criteri di ricerca
+  }
+  return risultati
 }
 
-function printResult(result) {
-    window.printResult(result);
-    //dato un array di risultati devo creare l'html per visualizzare gli elementi che ho ricercato
 
+
+// PARTE 2: 
+
+const ricercaOnClick = () => {
+  let titleValue = document.querySelector("input#title").value;
+  let locValue = document.querySelector("input#location").value;
+  let ul = document.querySelector("ul");
+  const res = cercaLavori(locValue, titleValue);
+  console.log(res);
+
+  // Resetta i valori dei campi di input
+  resetForm();
+
+  // Pulisci la lista dei risultati prima di aggiungere nuovi risultati
+  ul.innerHTML = '';
+
+  for (let i = 0; i < res.results.length; i++) {
+    const lavoro = res.results[i];
+    ul.innerHTML += `<li>${lavoro.title} @ ${lavoro.location}</li>`;
+  }
+}
+
+const resetForm = () => {
+  document.querySelector("input#title").value = '';
+  document.querySelector("input#location").value = '';
 }
